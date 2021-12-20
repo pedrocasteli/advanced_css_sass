@@ -12,47 +12,41 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-//MEDIA QUERY MANAGER
 /* 
-0 - 600px: Phone
-600 - 900px: Tablet portrait
-900 - 1200px: Tablet landscape
-1200 - 1800px is where our normal styles apply
-1800px +: Big desktop 
+MEDIA QUERY MANAGER
 
-1em = 16px
-$breakpoint argument choices:
-- phone
-- tab-port
-- tab-land
-- big-dektop
-
+DESKTOP 16:9
+0 - 640px => Arredondar para 600px: h-hd
+641 - 960px => Arredondar para 900px: h-fhd
+961 - 1280px => Arredondar para 1200px: hd
+1281 - 1920px => Arredondar para 1800px: fhd => Aqui é onde estão nossos estilos normais
+1920px + => fhdplus
 ORDER: Base + Typography > General Layout + Grid > Page Layout > Components
-
+1em = 16px
 */
 @mixin respond($breakpoint) {
-    @if $breakpoint == phone {
-        @media (max-width: 37.5em) {
-            //600px
+    //640px/16px = 40em
+    @if $breakpoint == h-hd {
+        @media (max-width: 40em) {
             @content;
         }
     }
-    @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) {
-            //900px
+    //960px/16px = 60em
+    @if $breakpoint == h-fhd {
+        @media (max-width: 60em) {
             @content;
         }
     }
-    @if $breakpoint == tab-land {
-        @media (max-width: 75em) {
-            //1200px
+
+    //1280px/16px = 80em
+    @if $breakpoint == hd {
+        @media (max-width: 80em) {
             @content;
         }
     }
-    @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) {
-            //1800px
+    //2000px/16px = 125em
+    @if $breakpoint == fhdplus {
+        @media (min-width: 125em) {
             @content;
         }
     }

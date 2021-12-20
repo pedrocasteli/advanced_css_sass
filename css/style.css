@@ -1,20 +1,15 @@
 @charset "UTF-8";
 /* 
-0 - 600px: Phone
-600 - 900px: Tablet portrait
-900 - 1200px: Tablet landscape
-1200 - 1800px is where our normal styles apply
-1800px +: Big desktop 
+MEDIA QUERY MANAGER
 
-1em = 16px
-$breakpoint argument choices:
-- phone
-- tab-port
-- tab-land
-- big-dektop
-
+DESKTOP 16:9
+0 - 640px => Arredondar para 600px: h-hd
+641 - 960px => Arredondar para 900px: h-fhd
+961 - 1280px => Arredondar para 1200px: hd
+1281 - 1920px => Arredondar para 1800px: fhd => Aqui é onde estão nossos estilos normais
+1920px + => fhdplus
 ORDER: Base + Typography > General Layout + Grid > Page Layout > Components
-
+1em = 16px
 */
 @keyframes moveInLeft {
   0% {
@@ -53,22 +48,22 @@ ORDER: Base + Typography > General Layout + Grid > Page Layout > Components
 
 html {
   font-size: 62.5%; }
-  @media (max-width: 75em) {
-    html {
-      font-size: 56.25%; } }
-  @media (max-width: 56.25em) {
+  @media (max-width: 80em) {
     html {
       font-size: 50%; } }
-  @media (min-width: 112.5em) {
+  @media (max-width: 60em) {
+    html {
+      font-size: 43.75%; } }
+  @media (max-width: 40em) {
+    html {
+      font-size: 25%; } }
+  @media (min-width: 125em) {
     html {
       font-size: 75%; } }
 
 body {
   box-sizing: border-box;
   padding: 3rem; }
-  @media (max-width: 56.25em) {
-    body {
-      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
@@ -90,19 +85,12 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
-    @media (max-width: 37.5em) {
-      .heading-primary--main {
-        letter-spacing: 1rem;
-        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out; }
-    @media (max-width: 37.5em) {
-      .heading-primary--sub {
-        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -114,12 +102,6 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s; }
-  @media (max-width: 56.25em) {
-    .heading-secondary {
-      font-size: 3rem; } }
-  @media (max-width: 37.5em) {
-    .heading-secondary {
-      font-size: 2.5rem; } }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -566,9 +548,6 @@ body {
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
-  @media (max-width: 56.25em) {
-    .footer {
-      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
@@ -579,10 +558,6 @@ body {
     border-top: 0.1rem solid #777;
     padding-top: 1.5rem;
     display: inline-block; }
-    @media (max-width: 56.25em) {
-      .footer__navigation {
-        width: 100%;
-        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -605,23 +580,12 @@ body {
     padding-top: 1.5rem;
     width: 85%;
     float: right; }
-    @media (max-width: 56.25em) {
-      .footer__copyright {
-        width: 100%;
-        float: none; } }
 
 .row {
   max-width: 114rem;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
-    @media (max-width: 56.25em) {
-      .row:not(:last-child) {
-        margin-bottom: 6rem; } }
-  @media (max-width: 56.25em) {
-    .row {
-      max-width: 50rem;
-      padding: 0 3rem; } }
   .row::after {
     content: "";
     display: table;
@@ -630,13 +594,6 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
-      @media (max-width: 56.25em) {
-        .row [class^="col-"]:not(:last-child) {
-          margin-right: 0;
-          margin-bottom: 6rem; } }
-    @media (max-width: 56.25em) {
-      .row [class^="col-"] {
-        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -658,10 +615,6 @@ body {
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  @media (max-width: 37.5em) {
-    .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
