@@ -16,21 +16,21 @@
 MEDIA QUERY MANAGER
 
 DESKTOP 16:9
-0 - 640px => Arredondar para 600px: h-hd
-641 - 960px => Arredondar para 900px: h-fhd
-961 - 1280px => Arredondar para 1200px: hd
-1281 - 1920px => Arredondar para 1800px: fhd => Aqui é onde estão nossos estilos normais
-1920px + => fhdplus
+0 - 640px => h-hd
+641 - 960px => h-fhd
+961 - 1280px => hd
+1281 - 1920px => fhd => Aqui é onde estão nossos estilos normais
+2500px + => fhdplus
 ORDER: Base + Typography > General Layout + Grid > Page Layout > Components
 1em = 16px
 */
 @mixin respond($breakpoint) {
     //640px/16px = 40em
-    @if $breakpoint == h-hd {
-        @media (max-width: 40em) {
-            @content;
-        }
-    }
+    // @if $breakpoint == h-hd {
+    //     @media (max-width: 40em) {
+    //         @content;
+    //     }
+    // }
     //960px/16px = 60em
     @if $breakpoint == h-fhd {
         @media (max-width: 60em) {
@@ -39,14 +39,14 @@ ORDER: Base + Typography > General Layout + Grid > Page Layout > Components
     }
 
     //1280px/16px = 80em
-    @if $breakpoint == hd {
-        @media (max-width: 80em) {
-            @content;
-        }
-    }
-    //2000px/16px = 125em
+    // @if $breakpoint == hd {
+    //     @media (max-width: 80em) {
+    //         @content;
+    //     }
+    // }
+    //2300px/16px = 143.75em
     @if $breakpoint == fhdplus {
-        @media (min-width: 125em) {
+        @media (min-width: 143.75em) {
             @content;
         }
     }

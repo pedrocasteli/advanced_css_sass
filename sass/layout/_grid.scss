@@ -4,6 +4,15 @@
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+
+        @include respond(h-fhd) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(h-fhd) {
+        max-width: 90rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
@@ -13,6 +22,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(h-fhd) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(h-fhd) {
+            width: 100% !important;
         }
     }
 

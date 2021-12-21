@@ -11,15 +11,15 @@ html {
     font-size: 62.5%; //1rem = 10px => 10px/16px = 62.5%
 
     @include respond(hd) {
-        font-size: 50%; //1rem = 8px, 8/16 = 50%
+        font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
     }
 
     @include respond(h-fhd) {
-        font-size: 43.75%; //1rem = 6px, 7/16 = 43.75%
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
     }
 
     @include respond(h-hd) {
-        font-size: 25%; //1rem = 4px, 4/16 = 25%
+        font-size: 40.62%; //1rem = 6.5px, 6.5/16 = 40.62%
     }
 
     @include respond(fhdplus) {
@@ -30,4 +30,8 @@ html {
 body {
     box-sizing: border-box;
     padding: 3rem;
+
+    @include respond(h-fhd) {
+        padding: 0;
+    }
 }
