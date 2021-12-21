@@ -11,6 +11,10 @@
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(h-fhd) {
+            margin-bottom: 5rem;
+        }
     }
 
     &__logo {
